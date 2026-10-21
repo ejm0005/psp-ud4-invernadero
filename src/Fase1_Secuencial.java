@@ -1,5 +1,6 @@
 public class Fase1_Secuencial {
     public static void main(String[] args){
+        System.out.println("VERSIÓN SECUENCIAL:");
         long inicio = System.currentTimeMillis();
         Sensor temperatura = new Temperatura();
         Sensor luz = new Luz();
