@@ -10,6 +10,11 @@ public class ProgramadorRiego extends Thread{
         super("riego");
         this.ciclosTotales = 5;
     }
+    //Constructor para la fase 3B
+    public ProgramadorRiego(int ciclosTotales){
+        super("riego");
+        this.ciclosTotales = ciclosTotales;
+    }
     @Override
     public void run(){
         for(int i=0; i<=ciclosTotales; i++){
