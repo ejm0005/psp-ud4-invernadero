@@ -31,6 +31,6 @@ public class ProgramadorRiego extends Thread{
         }
     }
     public String informe(){
-        return "Se han realizado " + ciclosHechos + " ciclos. Se han utilizado" + litrosTotales + " litros";
+        return "Se han realizado " + ciclosHechos + " ciclos. Se han utilizado " + litrosTotales + " litros";
     }
 }

@@ -55,6 +55,6 @@ public abstract class Sensor implements Runnable {
     }
     public String informe(){
         double media = suma/lecturas;
-        return "Sensor: " + nombre + " Lecturas: " + numLecturas + " Media: " + media + " Minimo: " + minimo + " Maximo: " + maximo + " nº de alertas: " + alertas;
+        return "Sensor: " + nombre + ", Lecturas: " + numLecturas + ", Media: " + media + ", Minimo: " + minimo + ", Maximo: " + maximo + ", nº de alertas: " + alertas;
     }
 }
