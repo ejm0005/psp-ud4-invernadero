@@ -26,7 +26,7 @@ public class ProgramadorRiego extends Thread{
             } else{
                 estado = "CERRADA";
             }
-            System.out.println(LocalTime.now() + " " + getName() + " " + "Ciclo: " + i + " Válvula:" + estado);
+            System.out.println(LocalTime.now() + " " + Thread.currentThread().getName() + " " + "Ciclo: " + i + " Válvula:" + estado);
             try{
                 Thread.sleep(700);
             } catch(InterruptedException e){
