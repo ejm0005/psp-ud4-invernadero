@@ -1,10 +1,10 @@
 # UD4 Practica 1: Invernadero
 ## Qué hace
-Este es un programa para simular la automatización de un invernadero. Está compuesto por 3 sensores (Temperatura, Luz y Humedad que implementan Runnable) y un programador de riegos que hereda de la clase Thread. A la hora de ejecutar, cada sensor realiza sus lecturas de forma independiente, mostrando sus estadisticas en un informe junto a las alertas que surgen cada vez que los valores superan los umbrales establecidos.
+Este es un programa para simular la automatización de un invernadero. Está compuesto por 3 sensores (Temperatura, Luz y Humedad que implementan Runnable) y un programador de riegos que hereda de la clase Thread. A la hora de ejecutar, cada sensor realiza sus lecturas de forma independiente, mostrando sus estadísticas en un informe junto a las alertas que surgen cada vez que los valores superan los umbrales establecidos.
 ## Cómo ejecutarlo
 Para ejecutar el programa:  
 1.- Clonar el repositorio de forma local  
-2.- Abrir el proyecto en un IDE con un JDK compatible (recomiendo JDK 25 ya que es el que he utilizado para programar)  
+2.- Abrir el proyecto en un IDE con un JDK compatible (recomiendo JDK 25, ya que es el que he utilizado para programar)  
 3.- Ejecutar cada fase de forma independiente.
 ## Captura ← una ejecución de la Fase 2
 ![Captura de una ejecución de la fase 2](capturas/Fase2Captura.png)
@@ -17,7 +17,7 @@ Para ejecutar el programa:
 
 ## Análisis
 ### ¿Por qué compensa usar hilos en el invernadero?
-Compensa porque en la versión secuencial sin hilos el programa pierde mucho tiempo en esperar a que un sensor termine sus lecturas antes de ejecutr el siguiente, mientras que con la concurrencia de hilos todos los sensores y el programador de riegos trabajan al mismo tiempo, lo que reduce el tiempo e ejecución al sensor más lento.
+Compensa porque en la versión secuencial sin hilos el programa pierde mucho tiempo en esperar a que un sensor termine sus lecturas antes de ejecutar el siguiente, mientras que con la concurrencia de hilos todos los sensores y el programador de riegos trabajan al mismo tiempo, lo que reduce el tiempo e ejecución al sensor más lento.
 ### Experimentos A, B y C (qué pasó y por qué)
 #### Experimento A
 __¿Qué sale la primera vez? ¿Por qué?__  
@@ -54,5 +54,6 @@ __Tabla con al menos 4 aspectos__
 
 __¿Por qué los sensores SOLO pueden ser Runnable en tu diseño?__  
 Porque estos heredan de la clase abstracta Sensor, por lo que no pueden heredar de Thread debido a la limitación de java de no poder heredar de más de una clase.  
+
 __¿Qué forma elegirías para el riego y por qué?__  
 Elegiría la forma de Thread. Debido a que ProgramadorRiego no tiene que heredar de ninguna clase superior y debe funcionar como un hilo dedicado con riego como nombre fijo, la herencia directa de Thread mediante extends Thread simplifica su instanciación en gran medida, lo que nos permite cumplir con los requisitos del modelo de forma sencilla.

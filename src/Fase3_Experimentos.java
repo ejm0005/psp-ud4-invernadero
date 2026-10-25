@@ -44,7 +44,7 @@ public class Fase3_Experimentos {
         try{
             riego.start();
         }catch(IllegalThreadStateException e){
-            System.out.println("ERROR FATAL: Un thread no se piede reutilizar o reiniciar una vez haya muerto.");
+            System.out.println("ERROR FATAL: Un thread no se puede reutilizar o reiniciar una vez haya muerto.");
 
         }
     }
