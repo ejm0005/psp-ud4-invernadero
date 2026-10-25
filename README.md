@@ -13,7 +13,7 @@ Para ejecutar el programa:
 | Nº de fase | Hilos                                                          | Resultado |
 | :--- |:---------------------------------------------------------------|:----------|
 | 1 | 1 hilo llamado main que ejecuta las tareas de forma secuencial | 11765ms   |
-| 2 | 4 hilos independienes que se ejecutan de forma concurrente     |  4239ms   |
+| 2 | 4 hilos independientes que se ejecutan de forma concurrente     |  4239ms   |  
 
 ## Análisis
 ### ¿Por qué compensa usar hilos en el invernadero?
@@ -38,7 +38,8 @@ Sale IllegalThreadStateException. Esta excepción indica que un thread no se pue
 | NEW | Antes de ejecutar el hilo | new Thread(...) en el caso de los sensores o new ProgramadorRiego(...) en el caso del programador de riego. |
 | RUNNABLE | En la ejecución | start()                                                                                                     |
 | TIMED_WAITING | En las pausas | Thread.sleep(...)                                                                                           |
-| TERMINATED | Al finalizar el hilo | El final del método run() de cada sensor |
+| TERMINATED | Al finalizar el hilo | El final del método run() de cada sensor |  
+
 __¿Por qué termina el programa si el vigilante sigue en su bucle?__  
 Porque el hilo de vigilante fue programado como demonio con el método vigilante.setDaemon(true), por lo que la máquina virtual de java no esperará a que este termine para terminar el programa, esperando solo a que los hilos principales mueran. 
 
@@ -50,7 +51,7 @@ __Tabla con al menos 4 aspectos__
 | Que representa el objeto | El hilo en sí                           | La tarea que va a ejecutar el hilo |
 | Como ejecutar | Llamando directamente al método start() | Envolviendo el objeto en un hilo con new Thread(objeto) y luego llamando al método start() |
 | Como obtener el nombre | getName() | Thread.currentThread().getName() |
-| Como hereda de otras clases | No se puede ya que java no soporta herencia múltiple (la clase ya hereda de Thread) | Permite heredar de otra clase si es necesario |
+| Como hereda de otras clases | No se puede ya que java no soporta herencia múltiple (la clase ya hereda de Thread) | Permite heredar de otra clase si es necesario |  
 
 __¿Por qué los sensores SOLO pueden ser Runnable en tu diseño?__  
 Porque estos heredan de la clase abstracta Sensor, por lo que no pueden heredar de Thread debido a la limitación de java de no poder heredar de más de una clase.  
